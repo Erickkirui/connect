@@ -1,0 +1,23 @@
+
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('../public/century-gothic.ttf');
+}
+
+:root {
+  --static: #ffffff;
+  --primary: #d87927;
+  --secondary: #000000;
+  --devider : #F5f9fd;
+  --other : #F7F8F9;
+}
+
+:root{
+  --header: 60px;
+  --text: 12px;
+}
+*{
+  font-family: 'Century Gothic';
+}
+

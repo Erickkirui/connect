@@ -1,0 +1,23 @@
+/* TwoColumnLayout.css */
+.bg-image-container {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* Change the background color as desired */
+}
+
+.bg-image-container img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Optional: Add styles to center the form on the page */
+/* Adjust as necessary based on your form's width */
+.form-container {
+ width: 100vw;
+}
+#login-btn{
+  width: 100%;
+  margin-top: 10px;
+}

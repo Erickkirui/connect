@@ -1,0 +1,97 @@
+
+:root {
+    --static: #ffffff;
+    --primary: #d87927;
+    --secondary: #000000;
+    --devider : #F5f9fd;
+    --other : #F7F8F9;
+  }
+
+:root{
+    --header: 900;
+    --headingtext:3rem;
+    --header2: 2rem;
+    --paragraph-text: 1rem;
+}
+
+#hero-text{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.heading{
+    font-weight: var(--header);
+    font-size:var(--headingtext) ;
+}
+
+.caption{
+    color: var(--primary);
+    font-weight: var(--header);
+    font-size: var(--header2);
+}
+.explainer{
+    font-size: var(--paragraph-text);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+.button1{
+    background-color: var(--primary);
+    color:var(--static);
+    border: none;
+    display: inline;
+    padding: 9px;
+    border-radius: 6px;
+    width: 50%;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+.button2{
+    margin: 0;
+    border: solid var(--primary) 1px;
+    padding: 10px;
+    border-radius: 6px;
+    width: 50%;
+    background-color: var(--static);
+    margin-left: -20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary);
+
+}
+
+#enlist{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  
+}
+
+.form-width{
+    width:40%;
+}
+.button-width{
+    width: 100%;
+}
+
+.devider{
+    background-color: #F5f9fd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#header{
+    margin-top: 60px;
+
+}
+.footer{
+    background-color:  var(--devider);
+    margin-top: 20px;
+}
+.Home p{
+    width: 75%;
+}
+
+
+  

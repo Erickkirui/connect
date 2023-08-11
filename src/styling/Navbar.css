@@ -1,0 +1,77 @@
+/* Navbar.css */
+.custom-navbar nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%; /* Cover 100% of the page */
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+
+  
+}
+
+.custom-navbar .site-title {
+  font-size: 15px; /* Increased font size */
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+
+  padding-right: 105px;
+}
+
+
+.custom-navbar .site-title img {
+  width: 15%; /* Image width set to 40% */
+ /* Adding space between logo and text */
+
+}
+
+.custom-navbar ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Vertically center the list */
+}
+
+.custom-navbar li {
+  margin: 0 15px; /* Adding space between list items */
+}
+
+.custom-navbar li a {
+  text-decoration: none;
+  color: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Adding transition effect */
+}
+
+.custom-navbar li a:hover {
+  color: #d87927; /* Lighter color on hover */
+}
+
+.custom-navbar li a.active {
+  color: #d87927;
+}
+
+.content {
+  margin-top: 20px; /* Adjust this value as needed */
+}
+
+/* Add media query for responsive design */
+@media (max-width: 768px) {
+  .custom-navbar .site-title {
+    font-size: 20px;
+  }
+
+  .custom-navbar li {
+    margin: 0 10px; /* Reduce space between list items */
+  }
+
+  .custom-navbar li a {
+    padding: 6px 10px;
+  }
+}

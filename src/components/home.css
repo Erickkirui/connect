@@ -1,0 +1,41 @@
+:root {
+    --static: #ffffff;
+    --primary: #d87927;
+    --secondary: #000000;
+    --devider : #F5f9fd;
+    --other : #E1E1E1;
+  }
+
+.list-group{
+    border-radius: 0px;
+    background-color: var(--devider);
+}
+
+.list-group-item{
+    padding: 20px;
+}
+
+.list-group-item.active{
+    background-color: var(--primary);
+}
+.btn{
+    background-color: var(--primary);
+    color: var(--static);
+}
+#section{
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    margin-left:auto;
+    width: 100%;
+} 
+
+.card-body{
+    padding: 10px;
+    margin-top: -20px;
+    background-color: var(--devider);
+}
+.alert-info{
+
+   text-align: center;
+   
+}
