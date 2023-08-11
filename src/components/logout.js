@@ -8,8 +8,8 @@ const LogoutButton = () => {
     // Clear the access token from local storage
     localStorage.removeItem('access_token');
 
-    // Refresh the page
-    window.location.reload();
+    // Use navigate to go to a specific route after logout
+    navigate('/'); // For example, navigate to the login page
   };
 
   return (

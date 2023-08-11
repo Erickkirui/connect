@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
-import { useParams ,Link} from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styling/singlengo.css';
-
 
 const NGODetails = () => {
   const { id } = useParams();
@@ -11,41 +9,37 @@ const NGODetails = () => {
   const [ngoData, setNgoData] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
+    const fetchNGOData = async () => {
+      try {
+        const accessToken = localStorage.getItem('access_token');
+        const config = {
+          headers: {
+            'Authorization': `Bearer ${accessToken}`,
+          },
+        };
+
+        const response = await axios.get(`/ngoconnect/ngo/${id}`, config); // Adjust the API endpoint
+
+        setNgoData(response.data); // Assuming the response contains the NGO data
+        setIsLoading(false); // Loading finished
+      } catch (error) {
+        console.error('Error fetching NGO details:', error);
+        setIsLoading(false); // Set loading to false even if an error occurs
+      }
+    };
+
+    const timer = setTimeout(() => {
       fetchNGOData();
     }, 5000); // Delay loading for 5 seconds
-  }, []);
 
-  const fetchNGOData = async () => {
-    try {
-      const accessToken = localStorage.getItem('access_token');
-      const config = {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-        },
-      };
-
-
-      const response = await axios.get(`/ngoconnect/ngo/${id}`, config); // Adjust the API endpoint
-
-
-      console.log(response.data);
-
-
-
-      setNgoData(response.data); // Assuming the response contains the NGO data
-      setIsLoading(false); // Loading finished
-    } catch (error) {
-      console.error('Error fetching NGO details:', error);
-      setIsLoading(false); // Set loading to false even if an error occurs
-    }
-  };
+    return () => clearTimeout(timer); // Clean up the timer on component unmount
+  }, [id]);
 
   if (isLoading) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <img src="/images/console-loader-2.gif" alt="login ngoconnect" />
-    </div>
+        <img src="/images/console-loader-2.gif" alt="login ngoconnect" />
+      </div>
     );
   }
 
@@ -77,8 +71,9 @@ const NGODetails = () => {
               </p>
               <p>Description: {ngoData.description}</p>
               <div>
-              <a href={ngoData.url} target="_blank" className="btn ">Visit Website</a>  <Link  to={'/donate'}className="btn" > Donate </Link>  <Link className="btn"> Volunteer </Link>
-
+              <a href={ngoData.url} target="_blank" rel="noopener noreferrer" className="btn">
+  Visit Website
+</a>
 
               </div>
               

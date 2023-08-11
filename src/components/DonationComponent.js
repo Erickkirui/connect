@@ -132,6 +132,7 @@ const DonationForm = () => {
         onChange={(e) => setDonationAmount(e.target.value)}
       />
       <p  className='guiode'> You will receive an mpesa prompt when you click donate, enter your mpesa pin to accept request.</p>
+      {error && <p className="error-message">{error}</p>}
 
 
       <button  className="btn btn-block size"  onClick={() => { handleDonate(); initiateSTKPayment(); }}>Donate Via Mpesa</button>

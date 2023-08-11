@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import '../styling/ngolisting.css';
-
 
 const NGOList = () => {
   const [ngos, setNgos] = useState([]);
@@ -13,17 +12,7 @@ const NGOList = () => {
   const isLoggedIn = accessToken !== null;
   const [selectedCategory, setSelectedCategory] = useState('Choose Category');
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetchNgos();
-    }
-  }, [isLoggedIn]);
-
-  useEffect(() => {
-    setCurrentPage(1); // Reset the current page when category changes
-  }, [selectedCategory]);
-
-  const fetchNgos = async () => {
+  const fetchNgos = useCallback(async () => {
     try {
       const config = {
         headers: {
@@ -36,7 +25,17 @@ const NGOList = () => {
     } catch (error) {
       console.error('Error fetching NGOs:', error);
     }
-  };
+  }, [accessToken]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      fetchNgos();
+    }
+  }, [isLoggedIn, fetchNgos]);
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset the current page when category changes
+  }, [selectedCategory]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -65,6 +64,7 @@ const NGOList = () => {
     'Social Help',
     'Any Other'
   ];
+
 
   return (
     <div>
