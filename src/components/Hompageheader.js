@@ -13,7 +13,7 @@ const HomepageHeader = () => {
       <div className="row">
         <div className="col" id="hero-text">
           <h1 className="heading">We connect</h1>
-          <h2 className="caption">communities & Ngos</h2>
+          <h2 className="caption">communities & Ngos(live)</h2>
           <p className="explainer">
             The ngo.connect is a user - friendly platform that connects users
             with a comprehensive list of NGOs, enabling you to explore missions,
